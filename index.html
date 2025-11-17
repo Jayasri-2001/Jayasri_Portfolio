@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birru Jayasri - Frontend Developer & AI/ML Enthusiast</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+        }
+
+        .project-header h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .project-body p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background: #f0f0f0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .project-features {
+            margin-top: 15px;
+        }
+
+        .project-features li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f9f9f9;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .experience-item h3 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .experience-duration {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+        }
+
+        .experience-item li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 15px;
+        }
+
+        .education-item h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            font-size: 1.1em;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Birru Jayasri</h1>
+            <p class="tagline">Associate Engineer - Web Development | AI/ML Enthusiast</p>
+            <div class="contact-info">
+                <a href="mailto:jayasribirrusweety@gmail.com">📧 jayasribirrusweety@gmail.com</a>
+                <a href="tel:+919603610287">📱 +91 96036 10287</a>
+                <a href="https://linkedin.com/in/birru-jayasri" target="_blank">💼 LinkedIn</a>
+                <a href="#">📍 Hyderabad, Telangana</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>About Me</h2>
+            <p class="about-text">
+                Associate Engineer with 1 year and 9 months of experience specializing in building responsive web applications using React.js, JavaScript, HTML5, CSS3, and Bootstrap. I have a strong foundation in creating user-friendly interfaces and optimizing application performance. With a minor degree in AI/ML and practical experience in Python, Machine Learning, Computer Vision, and NLP, I bring a unique blend of frontend development expertise and intelligent problem-solving skills to every project.
+            </p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Frontend Development</h3>
+                    <p>React.js, JavaScript (ES6+), HTML5, CSS3, Bootstrap, Responsive Design</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <p>JavaScript, Python, Java (Core), SQL</p>
+                </div>
+                <div class="skill-card">
+                    <h3>AI/ML & Data Science</h3>
+                    <p>Python, OpenCV, scikit-learn, NLP, NLTK, Machine Learning</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Technologies</h3>
+                    <p>Git, GitHub, VS Code, Local Storage, React Hooks</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🎭 Facial Expression Recognition System</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Developed an intelligent facial expression classifier that detects 7 different emotions (happy, sad, angry, surprise, fear, disgust, neutral) with 87% accuracy. The system uses machine learning and computer vision to analyze facial features in real-time.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">scikit-learn</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <div class="project-features">
+                            <strong>Key Features:</strong>
+                            <ul>
+                                <li>Trained ML model using scikit-learn on labeled facial image dataset</li>
+                                <li>Implemented face detection using OpenCV's Haar Cascade classifier</li>
+                                <li>Processed images through preprocessing (grayscale, resizing, normalization)</li>
+                                <li>Integrated live webcam feed for real-time emotion detection</li>
+                                <li>Achieved 87% accuracy in emotion classification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>🎬 Movie Review Sentiment & Toxicity Analyzer</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Built an NLP-based system that classifies movie reviews as positive or negative and detects toxic comments. Analyzed 50,000+ movie reviews from IMDB dataset with 85% classification accuracy using advanced natural language processing techniques.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <div class="project-features">
+                            <strong>Key Features:</strong>
+                            <ul>
+                                <li>Performed text preprocessing (tokenization, stop word removal, stemming)</li>
+                                <li>Implemented TF-IDF feature extraction for text analysis</li>
+                                <li>Trained classification models using Naive Bayes and Logistic Regression</li>
+                                <li>Analyzed 50,000+ IMDB movie reviews</li>
+                                <li>Achieved 85% accuracy in sentiment classification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>Associate Engineer - Web Development</h3>
+                <p style="color: #667eea; font-weight: 600;">L&T Technology Services</p>
+                <p class="experience-duration">March 2023 - Present | 1 Year 9 Months | Hyderabad</p>
+                <ul>
+                    <li>Developed responsive web applications using React.js, JavaScript, HTML, CSS, and Bootstrap, improving UI responsiveness by 30%</li>
+                    <li>Built reusable React components with props and state management for efficient code maintenance</li>
+                    <li>Worked extensively with React Hooks (useState, useEffect) for state management and side effects</li>
+                    <li>Optimized application performance through code refactoring and implementing best practices</li>
+                    <li>Collaborated with cross-functional teams to deliver features on schedule</li>
+                    <li>Implemented responsive designs using Bootstrap grid system for mobile and desktop views</li>
+                    <li>Used browser's localStorage for data persistence across sessions</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Additional Projects</h2>
+            <div class="experience-item">
+                <h3>📋 Employee Directory Management System</h3>
+                <p style="color: #888; margin-bottom: 10px;"><strong>Tech Stack:</strong> React.js, JavaScript, Bootstrap, Local Storage</p>
+                <ul>
+                    <li>Built comprehensive employee management with search, filter, and sort functionality</li>
+                    <li>Implemented CRUD operations for managing employee records</li>
+                    <li>Designed responsive UI using Bootstrap components</li>
+                    <li>Used React hooks for state management and localStorage for data persistence</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>🛒 E-Commerce Product Catalog</h3>
+                <p style="color: #888; margin-bottom: 10px;"><strong>Tech Stack:</strong> React.js, JavaScript, CSS3, Bootstrap</p>
+                <ul>
+                    <li>Developed dynamic product catalog application with filtering capabilities</li>
+                    <li>Implemented product filtering by category, price range, and search</li>
+                    <li>Created shopping cart with add/remove items and price calculation</li>
+                    <li>Built responsive product cards using Bootstrap and custom CSS</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>B.Tech in Electronics & Communication Engineering</h3>
+                <p><strong style="color: #667eea;">Minor: Artificial Intelligence & Machine Learning</strong></p>
+                <p>Vignana Bharathi Institute of Technology | 2019 - 2023</p>
+                <p><strong>CGPA:</strong> 8.09/10</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Birru Jayasri | Let's build something amazing together! 🚀</p>
+        </footer>
+    </div>
+</body>
+</html>
